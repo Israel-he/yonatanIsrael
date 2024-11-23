@@ -1,2 +1,2 @@
 ﻿file (GLOB_RECURSE MY_SOURCE_FILES CONFIGURE_DEPENDS LIST_DIRECTORIES false RELATIVE ${CMAKE_CURRENT_LIST_DIR} *.cpp)
-target_sources (${CMAKE_PROJECT_NAME} PRIVATE ${MY_SOURCE_FILES})
+target_sources (${CMAKE_PROJECT_NAME} PRIVATE ${MY_SOURCE_FILES} "../include/Robot.h" "../include/Gurd.h" "../include/OutDoor.h" "../include/Wall.h" "../include/Rock.h" "../include/Bomb.h" "Robot.cpp" "../include/Board.h" "Board.cpp" "Gurd.cpp" "OutDoor.cpp" "Wall.cpp" "Rock.cpp" "Bomb.cpp" "Game.cpp" "../include/Game.h")
