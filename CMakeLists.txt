@@ -1,17 +1,2 @@
-﻿cmake_minimum_required (VERSION 3.26)
-
-project(oop1_ex02)
-set (MY_AUTHORS "YOUR-NAME-HERE")
-
-include (cmake/CompilerSettings.cmake)
-
-add_executable (${CMAKE_PROJECT_NAME})
-
-target_compile_options(${CMAKE_PROJECT_NAME} PRIVATE $<$<CONFIG:DEBUG>:-fsanitize=address>)
-target_link_options(${CMAKE_PROJECT_NAME} PRIVATE $<$<CONFIG:DEBUG>:-fsanitize=address>)
-
-add_subdirectory (include)
-add_subdirectory (src)
-add_subdirectory (resources)
-
-include (cmake/Zip.cmake)
+﻿file (GLOB_RECURSE MY_SOURCE_FILES CONFIGURE_DEPENDS LIST_DIRECTORIES false RELATIVE ${CMAKE_CURRENT_LIST_DIR} *.cpp)
+target_sources (${CMAKE_PROJECT_NAME} PRIVATE ${MY_SOURCE_FILES} "../include/Robot.h" "Robot.cpp" "../include/Guard.h" "Guard.cpp" "Rock.cpp" "../include/Wall.h" "Wall.cpp" "../include/Board.h" "Board.cpp" "../include/try.h" "try.cpp" "../include/Bomb.h" "Bomb.cpp")
